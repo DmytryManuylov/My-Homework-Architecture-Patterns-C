@@ -6,11 +6,12 @@ namespace Factoring
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Здравствуйте!\nЭта программа находит факториал числа,\nсумму всех чисел и максимальное чётное число до Вашего числа!");
+            
             while (true)
             {
                 try
                 {
+                    ShowIntroText();
                     Intersect();
                     Console.WriteLine("Пожалуйста введите целое число... ");
                     Intersect();
@@ -37,10 +38,17 @@ namespace Factoring
         {
             Console.WriteLine("---------------------------------------------------------------------------------------");
         }
+        static void ShowIntroText()
+        {
+            Console.WriteLine("Здравствуйте!\nЭта программа находит факториал числа,\nсумму всех чисел и максимальное чётное число до Вашего числа!");
+        }
         static int FindNFactorial(int N)
         {
             int result = 1;
-            for (int i = 1; i <= N; i++) result = result * i;
+            for (int i = 1; i <= N; i++)
+            {
+                result = result * i;
+            }
             Console.WriteLine($"Факториал числа {N} равен: " + result);
             return result;
             
@@ -63,5 +71,5 @@ namespace Factoring
             return result;
         }
     }//class
-
+    
 }//namespace
